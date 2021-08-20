@@ -11,8 +11,10 @@ namespace UserRegisteration
     {
         public void Check(string name)
         {
+            //regex pattern is created to check validity
             string pattern = "^[A-Z][a-z]{3}[a-z]*$";
             Regex regex = new Regex(pattern);
+            // IsMatch method check the pattern and name
             if (regex.IsMatch(name))
             {
                 Console.WriteLine("Name {0} is Valid ", name);
@@ -22,7 +24,6 @@ namespace UserRegisteration
                 Console.WriteLine("Name {0} is Invalid", name);
             }
         }
-
         public void CheckMail(string mail)
         {
             //regex pattern is created to check validity
@@ -38,7 +39,6 @@ namespace UserRegisteration
                 Console.WriteLine("Email :{0} is Invalid", mail);
             }
         }
-
         public void PhoneNumberCheck(string num)
         {
             string pattern = @"^[1-9]{2}\s[1-9][0-9]{9}$";
@@ -52,10 +52,9 @@ namespace UserRegisteration
                 Console.WriteLine("Mobile Number {0} is invalid", num);
             }
         }
-
         public void PasswordCheck(string psw)
         {
-            string pattern = @"^[a-zA-Z0-9]{8}[a-zA-Z0-9]*";
+            string pattern = @"^(?=.*[A-Z])[a-zA-Z0-9]{8,20}$";
             Regex regex = new Regex(pattern);
             if (regex.IsMatch(psw))
             {
@@ -66,7 +65,6 @@ namespace UserRegisteration
                 Console.WriteLine("Password {0} is invalid", psw);
             }
         }
-
 
     }
 }
