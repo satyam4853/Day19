@@ -12,7 +12,7 @@ namespace UserRegisteration
         public void Check(string name)
         {
             //regex pattern is created to check validity
-            string pattern = "^[A-Z][a-z]{3}[a-z]*$";
+            string pattern = "[A-Z][a-z]{3}[a-z]*";
             Regex regex = new Regex(pattern);
             // IsMatch method check the pattern and name
             if (regex.IsMatch(name))
@@ -54,7 +54,7 @@ namespace UserRegisteration
         }
         public void PasswordCheck(string psw)
         {
-            string pattern = @"^(?=.*[A-Z])[a-zA-Z0-9]{8,20}$";
+            string pattern = @"^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[a-zA-Z0-9]{8,20}$";
             Regex regex = new Regex(pattern);
             if (regex.IsMatch(psw))
             {
