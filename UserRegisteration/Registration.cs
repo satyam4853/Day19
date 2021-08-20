@@ -53,6 +53,20 @@ namespace UserRegisteration
             }
         }
 
+        public void PasswordCheck(string psw)
+        {
+            string pattern = @"^[a-zA-Z0-9]{8}[a-zA-Z0-9]*";
+            Regex regex = new Regex(pattern);
+            if (regex.IsMatch(psw))
+            {
+                Console.WriteLine("Password {0} is valid", psw);
+            }
+            else
+            {
+                Console.WriteLine("Password {0} is invalid", psw);
+            }
+        }
+
 
     }
 }

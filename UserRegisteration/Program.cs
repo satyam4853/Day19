@@ -27,6 +27,10 @@ namespace UserRegisteration
             string num = Console.ReadLine();
             user.PhoneNumberCheck(num);
 
+            Console.Write("Enter your Password:");
+            string psw = Console.ReadLine();
+            user.PasswordCheck(psw);
+
         }
     }
 }
